@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lua to Website Conversion</title>
+    <title>Lua to Website Conversion with Debug Info</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,12 +20,15 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
         }
         input {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             margin: 10px 0;
+            width: calc(100% - 24px);
         }
         button {
             padding: 10px 20px;
@@ -38,10 +41,18 @@
         button:hover {
             background-color: #0056b3;
         }
-        .result {
+        .result, .debug-info {
             margin-top: 20px;
             font-size: 18px;
             color: #333;
+            text-align: left;
+        }
+        .debug-info {
+            text-align: center;
+            font-size: 14px;
+        }
+        .debug-info div {
+            margin: 5px 0;
         }
     </style>
 </head>
@@ -51,6 +62,7 @@
         <input type="text" id="inputString" placeholder="Enter a string">
         <button onclick="calculateResult()">Calculate</button>
         <div class="result" id="result"></div>
+        <div class="debug-info" id="debugInfo"></div>
     </div>
 
     <script>
@@ -70,15 +82,45 @@
             return { year, month, day };
         }
 
-        function harderSum(s) {
-            const { year, month, day } = getCurrentDateMultipliers();
-            return sumStringBytes(s) * year * month * day;
+        function getDeviceInfo() {
+            return {
+                userAgent: navigator.userAgent,
+                platform: navigator.platform,
+                language: navigator.language,
+                online: navigator.onLine
+            };
+        }
+
+        function formatDate(date) {
+            return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
         }
 
         function calculateResult() {
             const input = document.getElementById('inputString').value;
             const result = harderSum(input);
+
             document.getElementById('result').textContent = 'Result: ' + result;
+
+            // Debug info
+            const date = new Date();
+            const { year, month, day } = getCurrentDateMultipliers();
+            const deviceInfo = getDeviceInfo();
+            document.getElementById('debugInfo').innerHTML = `
+                <div><strong>Current Date and Time:</strong> ${formatDate(date)}</div>
+                <div><strong>Current Year:</strong> ${year}</div>
+                <div><strong>Current Month:</strong> ${month}</div>
+                <div><strong>Current Day:</strong> ${day}</div>
+                <div><strong>Device User Agent:</strong> ${deviceInfo.userAgent}</div>
+                <div><strong>Device Platform:</strong> ${deviceInfo.platform}</div>
+                <div><strong>Device Language:</strong> ${deviceInfo.language}</div>
+                <div><strong>Online Status:</strong> ${deviceInfo.online}</div>
+                <div><strong>Website Source:</strong> Local (HTML file)</div>
+            `;
+        }
+
+        function harderSum(s) {
+            const { year, month, day } = getCurrentDateMultipliers();
+            return sumStringBytes(s) * year * month * day;
         }
     </script>
 </body>
