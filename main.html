@@ -1,132 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="origin">
-    <title>Lua to Website Conversion with Debug Info</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            max-width: 600px;
-            width: 100%;
-        }
-        input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin: 10px 0;
-            width: calc(100% - 24px);
-        }
-        button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            background-color: #007BFF;
-            color: white;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .result, .debug-info {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #333;
-            text-align: left;
-        }
-        .debug-info {
-            text-align: center;
-            font-size: 14px;
-        }
-        .debug-info div {
-            margin: 5px 0;
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>This store is unavailable</title>
+  <meta name="referrer" content="origin">
+  <style type="text/css">
+    * { border:0; margin:0; padding:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }
+    html,body { height:100%; border:0; margin:0; padding:0; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; font-weight:300; background:#fff; }
+    body { min-height:100%; font-size:16px; line-height:22px; color:#6c6c6c; }
+    a { color:#479ccf; }
+
+    h1,h2,h3,h4,h5,h6 { text-align:left; margin:0 0 20px 0; color:#31373D; font-weight:700; }
+    h1 { font-size:28px; line-height:48px; margin-bottom:7px; }
+    h2 { font-size:20px; font-weight:300; line-height:30px; color:#6c6c6c; }
+    h3 { font-size:17px; line-height:30px; position:relative; padding-bottom:18px; margin-bottom:22px; font-weight:400; }
+    h3:after { content:""; position:absolute; left:0; bottom:0; height:2px; width:76px; background:#EAEAEA; }
+    h4 { font-size:14px; margin-bottom:3px; }
+
+    img { max-width:100%; }
+
+    li { margin-bottom:5px; }
+
+    .ico { display:inline-block; }
+    .ico svg { background-size:contain; background-position:center; width:24px; height:24px; margin-bottom:5px; }
+
+    .wrapper { min-width:320px; max-width:650px; margin:0 auto; padding:20px; }
+
+    .hero { margin-bottom:30px; }
+
+    .content--block { position:relative; margin-bottom:50px; }
+    .content--desc { margin-bottom:32px; position:relative; }
+    .content--desc-large { font-size:20px; line-height:28px; }
+
+    .request-id { padding-top:100px; font-size:13px; color:#ccc; }
+
+    @media all and (min-width:500px) {
+      body { padding:60px 0; }
+      .wrapper { padding:20px 20px 20px 100px; }
+      .ico svg { width:40px; height:40px; margin-bottom:0; }
+      .hero { margin-bottom:70px; }
+      .content--block { margin-bottom:80px; }
+      .content--desc .ico { position:absolute; left:-70px; top:-7px; }
+    }
+
+    @media all and (min-width:900px) {
+      .wrapper { padding:20px; }
+    }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Calculate Harder Sum</h1>
-        <input type="text" id="inputString" placeholder="Enter a string">
-        <button onclick="calculateResult()">Calculate</button>
-        <div class="result" id="result"></div>
-        <div class="debug-info" id="debugInfo"></div>
+
+<body class="status-error status-code-500">
+  <div class="wrapper">
+    <div class="content">
+      <div class="content--block">
+        <div class="content--desc">
+          <i class="ico ico-svg ico-40-svg">
+            <svg viewbox="0 0 40 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                <g id="back-soon-3" sketch:type="MSArtboardGroup" transform="translate(-230.000000, -519.000000)">
+                  <g id="what-went-wrong?" sketch:type="MSLayerGroup" transform="translate(231.000000, 444.000000)">
+                    <g id="warning" transform="translate(0.000000, 77.000000)" sketch:type="MSShapeGroup">
+                      <path d="M17.593,0.492 C18.217,-0.589 19.778,-0.589 20.402,0.492 L37.766,30.567 C38.39,31.648 37.61,33 36.361,33 L1.634,33 C0.386,33 -0.395,31.648 0.229,30.567 L17.593,0.492 L17.593,0.492 Z" id="Stroke-1" stroke="#E9BE33" stroke-width="2" stroke-linejoin="round"></path>
+                      <path d="M20.75,28 C20.75,28.966 19.966,29.75 19,29.75 C18.033,29.75 17.25,28.966 17.25,28 C17.25,27.034 18.033,26.25 19,26.25 C19.966,26.25 20.75,27.034 20.75,28" id="Fill-2" fill="#E9BE33"></path>
+                      <path d="M19,23 L19,8" id="Stroke-3" stroke="#E9BE33" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </i>
+          <p class="content--desc-large">Something went wrong.</p>
+        </div>
+      </div>
+      <div class="content--block">
+        <h3>What happened?</h3>
+        <div class="content--desc">
+          This store is unavailable
+        </div>
+      </div>
+      <div class="content--block">
+        <h3>What can I do?</h3>
+        <div class="content--desc">
+          <ul>
+            <li><a id="backLink" href="#">Return to the previous page.</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
+    <div class="request-id">Request ID: 94baeb27-2e76-48e7-8f82-6e1a9f5a14f1-1721673866</div>
+  </div>
 
-    <script>
-        function sumStringBytes(s) {
-            let sum = 0;
-            for (let i = 0; i < s.length; i++) {
-                sum += s.charCodeAt(i);
-            }
-            return sum;
-        }
-
-        function getCurrentDateMultipliers() {
-            const date = new Date();
-            const year = date.getFullYear();
-            const month = date.getMonth() + 1; // Months are 0-based
-            const day = date.getDate();
-            return { year, month, day };
-        }
-
-        function getDeviceInfo() {
-            return {
-                userAgent: navigator.userAgent,
-                platform: navigator.platform,
-                language: navigator.language,
-                online: navigator.onLine
-            };
-        }
-
-        function formatDate(date) {
-            return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
-        }
-
-        function calculateResult() {
-            const input = document.getElementById('inputString').value;
-            const result = harderSum(input);
-
-            document.getElementById('result').textContent = 'Result: ' + result;
-
-            // Debug info
-            const date = new Date();
-            const { year, month, day } = getCurrentDateMultipliers();
-            const deviceInfo = getDeviceInfo();
-            const currentUrl = window.location.href;
-            const referrerUrl = document.referrer || 'No referrer information available';
-
-            document.getElementById('debugInfo').innerHTML = `
-                <div><strong>Current Date and Time:</strong> ${formatDate(date)}</div>
-                <div><strong>Current Year:</strong> ${year}</div>
-                <div><strong>Current Month:</strong> ${month}</div>
-                <div><strong>Current Day:</strong> ${day}</div>
-                <div><strong>Device User Agent:</strong> ${deviceInfo.userAgent}</div>
-                <div><strong>Device Platform:</strong> ${deviceInfo.platform}</div>
-                <div><strong>Device Language:</strong> ${deviceInfo.language}</div>
-                <div><strong>Online Status:</strong> ${deviceInfo.online}</div>
-                <div><strong>Current Website URL:</strong> ${currentUrl}</div>
-                <div><strong>Referrer URL:</strong> ${referrerUrl}</div>
-            `;
-        }
-
-        function harderSum(s) {
-            const { year, month, day } = getCurrentDateMultipliers();
-            return sumStringBytes(s) * year * month * day;
-        }
-    </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var referrerUrl = document.referrer || 'No referrer information available';
+      var backLink = document.getElementById('backLink');
+      backLink.href = referrerUrl;
+      backLink.textContent = 'Return to ' + (referrerUrl !== 'No referrer information available' ? referrerUrl : 'the previous page');
+    });
+  </script>
 </body>
 </html>
