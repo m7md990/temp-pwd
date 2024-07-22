@@ -105,6 +105,9 @@
             const date = new Date();
             const { year, month, day } = getCurrentDateMultipliers();
             const deviceInfo = getDeviceInfo();
+            const currentUrl = window.location.href;
+            const referrerUrl = document.referrer || 'No referrer information available';
+
             document.getElementById('debugInfo').innerHTML = `
                 <div><strong>Current Date and Time:</strong> ${formatDate(date)}</div>
                 <div><strong>Current Year:</strong> ${year}</div>
@@ -114,7 +117,8 @@
                 <div><strong>Device Platform:</strong> ${deviceInfo.platform}</div>
                 <div><strong>Device Language:</strong> ${deviceInfo.language}</div>
                 <div><strong>Online Status:</strong> ${deviceInfo.online}</div>
-                <div><strong>Website Source:</strong> Local (HTML file)</div>
+                <div><strong>Current Website URL:</strong> ${currentUrl}</div>
+                <div><strong>Referrer URL:</strong> ${referrerUrl}</div>
             `;
         }
 
