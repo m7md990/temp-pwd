@@ -51,23 +51,22 @@
 <div class="popup" id="popup">
     <img src="https://cdn.discordapp.com/icons/1187831244113842297/d1cbe97091db065061d24c1e42d36818.webp?size=80" alt="Logo" class="logo">
     <h2>PUT ANYTHING HERE</h2>
-    <div id="countdown1">45</div>
-    <button id="continueButton1" disabled>Continue</button>
+    <button id="continueButton1" disabled>Continue in 45s</button>
 </div>
 
 <script>
     let countdownValue1 = 45;
-    const countdownDisplay1 = document.getElementById('countdown1');
     const continueButton1 = document.getElementById('continueButton1');
 
     function updateCountdown1() {
-        countdownDisplay1.textContent = countdownValue1;
+        continueButton1.textContent = `Continue in ${countdownValue1}s`;
         countdownValue1--;
 
         if (countdownValue1 < 0) {
             clearInterval(countdownInterval1);
             continueButton1.classList.add('enabled');
             continueButton1.disabled = false;
+            continueButton1.textContent = 'Continue';
             continueButton1.style.cursor = 'pointer';
         }
     }
@@ -83,5 +82,3 @@
 
 </body>
 </html>
-
-
