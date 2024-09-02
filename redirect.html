@@ -1,20 +1,96 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting to YouTube</title>
-    
-    <!-- Prevent caching -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-
-    <!-- Redirect to YouTube -->
-    <script>
-        window.location.href = "https://justcut.io/temp-pwd";
-    </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .popup {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: calc(100% - 100px);
+            height: calc(100% - 100px);
+            max-width: 600px;
+            max-height: 600px;
+            justify-content: center;
+        }
+        .popup button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+        .popup #link1Button {
+            background-color: #28a745; /* Green */
+        }
+        .popup button.disabled {
+            background-color: #007BFF;
+            cursor: not-allowed;
+        }
+        .popup button.enabled {
+            background-color: #28a745;
+        }
+    </style>
 </head>
 <body>
+
+<div class="popup" id="popup">
+    <button id="link1Button">Link 1</button>
+    <button id="continueButton1" class="disabled" disabled>Link 2 in 45</button>
+</div>
+
+<script>
+    let countdownValue1 = 45;
+    const continueButton1 = document.getElementById('continueButton1');
+
+    function updateCountdown1() {
+        continueButton1.textContent = `Link 2 in ${countdownValue1}`;
+        countdownValue1--;
+
+        if (countdownValue1 < 0) {
+            clearInterval(countdownInterval1);
+            continueButton1.textContent = "Link 2";
+            continueButton1.classList.remove('disabled');
+            continueButton1.classList.add('enabled');
+            continueButton1.disabled = false;
+        }
+    }
+
+    const countdownInterval1 = setInterval(updateCountdown1, 1000);
+
+    continueButton1.addEventListener('click', function() {
+        if (!continueButton1.disabled) {
+            window.location.href = 'https://link-hub.net/380002/temp-pwd1';
+        }
+    });
+
+    document.getElementById('link1Button').addEventListener('click', function() {
+        window.location.href = 'https://justcut.io/temp-pwd';
+    });
+</script>
+
 </body>
 </html>
