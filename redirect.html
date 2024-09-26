@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -32,34 +32,61 @@
             max-height: 600px;
             justify-content: center;
         }
+        .button-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
         .popup button {
-            padding: 10px 20px;
+            padding: 10px 10px;
             border: none;
-            background-color: #007BFF;
             color: white;
             border-radius: 5px;
             cursor: pointer;
-            margin-bottom: 10px;
-            width: 100%;
-            max-width: 300px;
+            margin-left: 10px;
         }
         .popup #link1Button {
             background-color: #28a745; /* Green */
+            padding: 10px 40px;
+        }
+        .popup #link2Button {
+            background-color: #007BFF; /* Blue */
+            padding: 10px 40px;
+        }
+        .popup .youtube-button {
+            background-color: #FF0000; /* Red for YouTube */
+            display: flex;
+            align-items: center;
+        }
+        .popup .youtube-button i {
+            margin-right: 5px;
         }
         .popup button.disabled {
             background-color: #007BFF;
             cursor: not-allowed;
+            padding: 10px 20px;
         }
         .popup button.enabled {
             background-color: #28a745;
+            padding: 10px 40px;
         }
     </style>
 </head>
 <body>
 
 <div class="popup" id="popup">
-    <button id="link1Button">Link 1</button>
-    <button id="continueButton1" class="disabled" disabled>Link 2 in 45</button>
+    <div class="button-container">
+        <button id="link1Button">Link 1</button>
+        <button class="youtube-button" id="youtubeButton1">
+            <i class="fab fa-youtube"></i>YouTube
+        </button>
+    </div>
+    <div class="button-container">
+        <button id="continueButton1" class="disabled" disabled>Link 2 in 45</button>
+        <button class="youtube-button" id="youtubeButton2">
+            <i class="fab fa-youtube"></i>YouTube
+        </button>
+    </div>
 </div>
 
 <script>
@@ -89,6 +116,15 @@
 
     document.getElementById('link1Button').addEventListener('click', function() {
         window.location.href = 'https://justcut.io/temp-pwd';
+    });
+
+    // Add click event listeners for the YouTube buttons
+    document.getElementById('youtubeButton1').addEventListener('click', function() {
+        window.location.href = 'https://youtu.be/nFYLOHOu0wE'; // Replace with desired YouTube link
+    });
+
+    document.getElementById('youtubeButton2').addEventListener('click', function() {
+        window.location.href = 'https://www.youtube.com/watch?v=example'; // Replace with different YouTube link
     });
 </script>
 
