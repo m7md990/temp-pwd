@@ -1,1 +1,1 @@
-{"ver":999, "link": "https://raw.githubusercontent.com/m7md990/temp-pwd/refs/heads/main/MPanel.lua", "md5": "4f489a4f65b656effbcca5a3b6da506f"}
+{"ver":999, "link": "https://raw.githubusercontent.com/m7md990/temp-pwd/refs/heads/main/MPanel.lua", "md5": "f1879dc1be7760c83a8222cdf6ad8a1e"}
