@@ -30,6 +30,7 @@
         <h1>تحويل الفراغات إلى -</h1>
         <input type="text" id="inputText" placeholder="أدخل النص هنا">
         <button onclick="convertText()">تحويل</button>
+        <button onclick="pasteText()">الصق من الحافظة</button>
         <p id="result"></p>
     </div>
 
@@ -41,6 +42,14 @@
             // نسخ النص المحول مباشرة بعد التحويل
             navigator.clipboard.writeText(result).catch(err => {
                 console.error('فشل النسخ: ', err);
+            });
+        }
+
+        function pasteText() {
+            navigator.clipboard.readText().then(text => {
+                document.getElementById('inputText').value = text;
+            }).catch(err => {
+                console.error('فشل الصق من الحافظة: ', err);
             });
         }
     </script>
