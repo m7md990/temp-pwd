@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحويل الفراغات إلى -</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            direction: rtl;
+        }
+        .container {
+            text-align: center;
+        }
+        input, button {
+            font-size: 18px;
+            padding: 10px;
+            margin-top: 10px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>تحويل الفراغات إلى -</h1>
+        <input type="text" id="inputText" placeholder="أدخل النص هنا">
+        <button onclick="convertText()">تحويل</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convertText() {
+            const inputText = document.getElementById('inputText').value;
+            const result = inputText.replace(/\s+/g, '-');
+            document.getElementById('result').textContent = result;
+            // نسخ النص المحول مباشرة بعد التحويل
+            navigator.clipboard.writeText(result).catch(err => {
+                console.error('فشل النسخ: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
